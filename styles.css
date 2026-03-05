@@ -1,0 +1,195 @@
+/* Theme variables toggled by content.js via `doomless-dark` class */
+:root {
+  --dl-bg: #fff;
+  --dl-fg: #111;
+  --dl-border: #ddd;
+  --dl-muted-bg: #eee;
+  --dl-counter-bg: #fff;
+  --dl-counter-shadow: #111;
+  --dl-banner-bg: #111;
+  --dl-banner-fg: #fff;
+}
+
+:root.doomless-enabled.doomless-dark {
+  --dl-bg: #111;
+  --dl-fg: #e6e6e6;
+  --dl-border: #444;
+  --dl-muted-bg: #2a2a2a;
+  --dl-counter-bg: #1a1a1a;
+  --dl-counter-shadow: #000;
+  --dl-banner-bg: #000;
+  --dl-banner-fg: #f5f5f5;
+}
+
+/* ── Global reset to plain monochrome ── */
+:root.doomless-enabled *:not(#doomless-counter):not(#doomless-counter *):not(#doomless-banner):not(#doomless-banner *) {
+  background-color: var(--dl-bg) !important;
+  color: var(--dl-fg) !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  border-color: var(--dl-border) !important;
+  filter: none !important;
+}
+
+/* Apply monospace to text/content elements without touching icon primitives */
+:root.doomless-enabled :is(
+  body,
+  main,
+  article,
+  section,
+  nav,
+  div,
+  span,
+  p,
+  a,
+  button,
+  input,
+  textarea,
+  label,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  small,
+  strong,
+  em,
+  time
+):not(#doomless-counter):not(#doomless-counter *):not(#doomless-banner):not(#doomless-banner *) {
+  font-family: "Courier New", Courier, monospace !important;
+}
+
+/* Strip all images / videos / SVG icons */
+:root.doomless-enabled img,
+:root.doomless-enabled video,
+:root.doomless-enabled canvas {
+  display: none !important;
+}
+
+/* Hide sidebars, ads, nav chrome */
+:root.doomless-enabled aside,
+:root.doomless-enabled [role="complementary"],
+:root.doomless-enabled [aria-label*="trending" i],
+:root.doomless-enabled [aria-label*="who to follow" i],
+:root.doomless-enabled [aria-label*="advertisement" i] {
+  display: none !important;
+}
+
+/* ── Counter widget ── */
+:root.doomless-enabled #doomless-counter {
+  position: fixed !important;
+  top: 12px !important;
+  right: 12px !important;
+  z-index: 2147483647 !important;
+  width: 160px !important;
+  background: var(--dl-counter-bg) !important;
+  border: 1.5px solid var(--dl-fg) !important;
+  border-radius: 6px !important;
+  padding: 7px 10px !important;
+  font-family: "Courier New", Courier, monospace !important;
+  box-shadow: 2px 2px 0 var(--dl-counter-shadow) !important;
+  color: var(--dl-fg) !important;
+}
+
+:root.doomless-enabled #doomless-counter.warn {
+  border-color: #c07000 !important;
+  box-shadow: 2px 2px 0 #c07000 !important;
+}
+
+:root.doomless-enabled #doomless-counter.limit {
+  border-color: #c00 !important;
+  box-shadow: 2px 2px 0 #c00 !important;
+}
+
+:root.doomless-enabled #doomless-counter .dl-label {
+  font-size: 9px !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  opacity: 0.5 !important;
+  margin-bottom: 4px !important;
+}
+
+:root.doomless-enabled #doomless-counter .dl-stat {
+  font-size: 15px !important;
+  font-weight: bold !important;
+  line-height: 1 !important;
+  margin-bottom: 4px !important;
+}
+
+:root.doomless-enabled #doomless-counter .dl-num {
+  font-size: 20px !important;
+}
+
+:root.doomless-enabled #doomless-counter .dl-unit {
+  font-size: 11px !important;
+  opacity: 0.6 !important;
+}
+
+:root.doomless-enabled #doomless-counter .dl-bar-wrap {
+  width: 100% !important;
+  height: 3px !important;
+  background: var(--dl-muted-bg) !important;
+  border-radius: 2px !important;
+  overflow: hidden !important;
+  margin-bottom: 4px !important;
+}
+
+:root.doomless-enabled #doomless-counter .dl-bar {
+  height: 100% !important;
+  background: var(--dl-fg) !important;
+  border-radius: 2px !important;
+  transition: width 0.3s ease !important;
+}
+
+:root.doomless-enabled #doomless-counter.warn .dl-bar {
+  background: #c07000 !important;
+}
+
+:root.doomless-enabled #doomless-counter.limit .dl-bar {
+  background: #c00 !important;
+}
+
+:root.doomless-enabled #doomless-counter .dl-meta {
+  font-size: 9px !important;
+  opacity: 0.5 !important;
+}
+
+/* ── Limit banner ── */
+:root.doomless-enabled #doomless-banner {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 2147483647 !important;
+  background: var(--dl-banner-bg) !important;
+  color: var(--dl-banner-fg) !important;
+  font-family: "Courier New", Courier, monospace !important;
+  font-size: 14px !important;
+  padding: 14px 20px !important;
+  text-align: center !important;
+  line-height: 1.6 !important;
+}
+
+:root.doomless-enabled #doomless-banner strong {
+  color: var(--dl-banner-fg) !important;
+}
+
+:root.doomless-enabled #doomless-dismiss {
+  margin-left: 16px !important;
+  background: transparent !important;
+  border: 1px solid var(--dl-banner-fg) !important;
+  color: var(--dl-banner-fg) !important;
+  font-family: "Courier New", Courier, monospace !important;
+  font-size: 12px !important;
+  padding: 3px 10px !important;
+  cursor: pointer !important;
+  border-radius: 3px !important;
+  vertical-align: middle !important;
+}
+
+:root.doomless-enabled #doomless-dismiss:hover {
+  background: var(--dl-banner-fg) !important;
+  color: var(--dl-banner-bg) !important;
+}
