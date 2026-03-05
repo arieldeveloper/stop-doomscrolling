@@ -1,35 +1,13 @@
-# Doomless Scroll (Chrome Extension)
 
-`Doomless Scroll` is a Manifest V3 browser extension that makes X/Twitter less addictive.
+`Doomless Scroll` is a chrome extension that makes X less addictive.
 
-## What This Repository Contains
-
-This project is a plain JavaScript browser extension with no build step.
-
-- `manifest.json`: Extension manifest (MV3)
-- `content.js`: Feed cleanup + post counting logic (runs on `x.com` / `twitter.com`)
-- `styles.css`: Monochrome/feed-reduction styles + counter/banner styling
-- `background.js`: Daily stats sync + badge updates + daily reset alarm
-- `popup.html` + `popup.js`: Extension popup UI and settings
-- `icons/`: Extension icons
-
-## Prerequisites
-
-- Google Chrome (recommended) or any Chromium browser that supports MV3 extensions:
-  - Chrome
-  - Brave
-  - Microsoft Edge
-  - Arc
-
-No Node.js, npm, or bundler is required.
 
 ## Quick Start (Local Setup)
 
 1. Clone this repo:
 
 ```bash
-git clone https://github.com/<your-username>/stop-doomscrolling.git
-cd stop-doomscrolling
+git clone https://github.com/arieldeveloper/stop-doomscrolling.git
 ```
 
 2. Open extension management in your browser:
@@ -41,16 +19,11 @@ cd stop-doomscrolling
 
 4. Click **Load unpacked**.
 
-5. Select this project folder (the one containing `manifest.json`).
+5. Select this project folder you cloned.
 
-6. Open `https://x.com` (or refresh existing X/Twitter tabs).
+Done. Use X without doomscrolling.
 
-7. Pin the extension and open the popup to configure:
-  - Daily limit
-  - Extension enabled/disabled
-  - Dark mode
-
-## Development Workflow
+## When making changes
 
 There is no compile/build step. Edit files directly, then reload the extension.
 
